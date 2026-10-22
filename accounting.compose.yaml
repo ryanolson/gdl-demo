@@ -1,0 +1,7 @@
+services:
+  ledger:
+    build:
+      context: ..
+      dockerfile: accounting.Dockerfile
+    ports:
+      - "127.0.0.1:8091:8091"

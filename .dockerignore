@@ -1,0 +1,6 @@
+.git
+**/target
+**/catalog
+**/segments
+**/compact
+**/deployment

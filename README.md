@@ -70,7 +70,7 @@ The tests cover deterministic output, known usage, graph settings, wire identity
 
 ## GDL revision
 
-The node crates and generated runtime use public GDL commit `deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94`. Use `cargo-gdl` from that revision. `gdl.toml` places the frontend, engine, and usage tap in separate processes. `compact.toml` places the same graph and graph settings in one process.
+The node crates and generated runtime use public GDL commit `b224c6c1203c63e7156ac015448af7c981d92816`. Use `cargo-gdl` from that revision. `gdl.toml` places the frontend, engine, and usage tap in separate processes. `compact.toml` places the same graph and graph settings in one process.
 
 ```bash
 cargo gdl generate --spec gdl.toml --out segments

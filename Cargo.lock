@@ -254,17 +254,20 @@ dependencies = [
 [[package]]
 name = "gdl"
 version = "0.1.0"
-source = "git+https://github.com/ryanolson/gdl?rev=deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94#deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94"
+source = "git+https://github.com/ryanolson/gdl?rev=b224c6c1203c63e7156ac015448af7c981d92816#b224c6c1203c63e7156ac015448af7c981d92816"
 dependencies = [
  "arc-swap",
  "futures",
  "gdl-macros",
  "gdl-message",
  "gdl-model",
+ "gdl-pools",
  "pin-project-lite",
  "prometheus",
  "rmp-serde",
+ "rustix",
  "serde",
+ "serde_json",
  "thiserror",
  "tokio",
  "tokio-util",
@@ -286,7 +289,7 @@ dependencies = [
 [[package]]
 name = "gdl-macros"
 version = "0.1.0"
-source = "git+https://github.com/ryanolson/gdl?rev=deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94#deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94"
+source = "git+https://github.com/ryanolson/gdl?rev=b224c6c1203c63e7156ac015448af7c981d92816#b224c6c1203c63e7156ac015448af7c981d92816"
 dependencies = [
  "gdl-model",
  "gdl-syntax",
@@ -298,7 +301,7 @@ dependencies = [
 [[package]]
 name = "gdl-message"
 version = "0.1.0"
-source = "git+https://github.com/ryanolson/gdl?rev=deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94#deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94"
+source = "git+https://github.com/ryanolson/gdl?rev=b224c6c1203c63e7156ac015448af7c981d92816#b224c6c1203c63e7156ac015448af7c981d92816"
 dependencies = [
  "gdl-macros",
  "gdl-model",
@@ -310,16 +313,31 @@ dependencies = [
 [[package]]
 name = "gdl-model"
 version = "0.1.0"
-source = "git+https://github.com/ryanolson/gdl?rev=deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94#deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94"
+source = "git+https://github.com/ryanolson/gdl?rev=b224c6c1203c63e7156ac015448af7c981d92816#b224c6c1203c63e7156ac015448af7c981d92816"
 dependencies = [
  "serde",
+ "serde_json",
+ "serde_path_to_error",
  "toml",
+]
+
+[[package]]
+name = "gdl-pools"
+version = "0.1.0"
+source = "git+https://github.com/ryanolson/gdl?rev=b224c6c1203c63e7156ac015448af7c981d92816#b224c6c1203c63e7156ac015448af7c981d92816"
+dependencies = [
+ "futures",
+ "gdl-model",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "tokio",
 ]
 
 [[package]]
 name = "gdl-syntax"
 version = "0.1.0"
-source = "git+https://github.com/ryanolson/gdl?rev=deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94#deefaa92f37ef3f6e4372c7c4c16eb1eccc1ac94"
+source = "git+https://github.com/ryanolson/gdl?rev=b224c6c1203c63e7156ac015448af7c981d92816#b224c6c1203c63e7156ac015448af7c981d92816"
 dependencies = [
  "gdl-model",
  "proc-macro2",
@@ -591,6 +609,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "linux-raw-sys"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "32a66949e030da00e8c7d4434b251670a91556f4144941d37452769c25d58a53"
+
+[[package]]
 name = "litemap"
 version = "0.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -789,6 +813,19 @@ checksum = "72f81bee8c8ef9b577d1681a70ebbc962c232461e397b22c208c43c04b67a155"
 dependencies = [
  "rmp",
  "serde",
+]
+
+[[package]]
+name = "rustix"
+version = "1.1.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e5e76742e5294153d4dde1207dbec5bdd81eef6fabdc0d2118babadabfd858aa"
+dependencies = [
+ "bitflags",
+ "errno",
+ "libc",
+ "linux-raw-sys",
+ "windows-sys",
 ]
 
 [[package]]
